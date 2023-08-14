@@ -13,9 +13,11 @@ const LocationForm = ({ handleSubmit }) => {
           placeholder="Type a location ID..."
           type="number"
         />
-        <button className=" px-4 border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green">Search</button>
+        <button className=" px-4 border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green">
+          Search
+        </button>
       </form>
-      </div>
+    </div>
   );
 };
 export default LocationForm;

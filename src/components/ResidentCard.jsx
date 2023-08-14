@@ -24,7 +24,7 @@ const ResidentCard = ({ residentUrl }) => {
           {/* image container */}
           <div className="max-h-[25.125rem] max-w-auto border-b-[2px]  border-[#8EFF8B] overflow-hidden">
             <div
-              style={{ height: "auto",  width: "auto"}}
+              style={{ height: "auto", width: "auto" }}
               className="transform translate-y-[-1rem]"
             >
               <img
@@ -54,22 +54,34 @@ const ResidentCard = ({ residentUrl }) => {
         </section>
         {/* description container  */}
         <section>
-          <h2 className="p-4 mx-2 pt-5 pb-1 border-b-[1px]  border-[#8fff8b44] font-bold text-[2rem]">
+          {/* character name  */}
+          <h2 className=" truncate p-4 mx-2 pt-5 pb-1 border-b-[1px]  border-[#8fff8b44] font-bold text-[2rem]">
             {residentInfo?.name}
           </h2>
           <ul className="flex flex-col mx-5 gap-4 pb-5 text-[#938686] m-3">
             <li>
               Species
-              <span className=" ml-[4.5rem] text-white text-xl">{residentInfo?.species}</span>
+              <span className=" ml-[4.5rem] text-white text-xl">
+                {residentInfo?.species}
+              </span>
             </li>
             <li>
               Origin
-              <span className="ml-[5.1rem] text-white text-xl">{residentInfo?.origin.name.replace(/\b\w/g, c => c.toUpperCase())}</span>
+              <span className="ml-[5.1rem] text-white text-xl">
+                {residentInfo?.origin.name.replace(/\b\w/g, (c) =>
+                  c.toUpperCase()
+                )}
+              </span>
             </li>
             <li>
-            Times Apear<span className="ml-[2.1rem] text-white text-xl">{residentInfo?.episode.length === 0
-    ? "none"
-    : `${residentInfo?.episode.length} ${residentInfo?.episode.length === 1 ? "time" : "times"}`}</span>
+              Times Apear
+              <span className="ml-[2.1rem] text-white text-xl">
+                {residentInfo?.episode.length === 0
+                  ? "none"
+                  : `${residentInfo?.episode.length} ${
+                      residentInfo?.episode.length === 1 ? "time" : "times"
+                    }`}
+              </span>
             </li>
           </ul>
         </section>

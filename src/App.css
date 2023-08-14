@@ -1,7 +1,14 @@
 .bg-custom{
+    /* position: absolute; */
     background: url(images/pagebg.png);
-    background-position: center;
+    /* background-position: center; */
     /* background-repeat: repeat-y; */
-    width: 1400;
+    min-width: 2000;
     height: 1000;
+    top: 0;
+
+    
+
+    
+    
 }

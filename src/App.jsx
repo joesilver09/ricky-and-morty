@@ -6,6 +6,7 @@ import LocationForm from "./components/LocationForm";
 import LocationInfo from "./components/LocationInfo";
 import ResidentList from "./components/ResidentList";
 import Backgrounds from "./components/Backgrounds";
+import Footer from "./components/Footer";
 
 function App() {
   const [dimensionData, setDimensionData] = useState(null);
@@ -38,9 +39,9 @@ const handleSubmit = (e) => {
   return (
 <>
     <div className="bg-custom bg-center min-w-max">
-       <Backgrounds></Backgrounds>
+       <Backgrounds/>
       <main
-        className=" font-fira-code bg-center bg-cover text-white min-h-screen  min-w-max flex justify-center items-center"
+        className=" font-fira-code bg-center bg-cover text-white min-h-[70vh]  min-w-max flex justify-center items-center overflow-hidden"
         // style={{
         //   backgroundImage: "url(rick40x705.jpg)",
         //   display: "flex",
@@ -55,6 +56,7 @@ const handleSubmit = (e) => {
           <LocationForm handleSubmit={handleSubmit} />
           <LocationInfo dimensionData={dimensionData} />
           <ResidentList currentLocation={dimensionData} residents={dimensionData?.residents ?? []} />
+          <Footer/>
         </div>
       </main>
     </div>
