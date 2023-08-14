@@ -25,7 +25,7 @@ setCurrentPage(INITIAL_PAGE)
 
 return (
     <>
-      <section>
+      <section className="relative">
       <Pagination pages={pages} setCurrentPage={setCurrentPage}  currentPage={currentPage}/>
         <section>
           {residentsInPage.map((resident) => (

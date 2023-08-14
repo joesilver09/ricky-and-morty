@@ -1,0 +1,7 @@
+.bg-custom{
+    background: url(images/pagebg.png);
+    background-position: center;
+    /* background-repeat: repeat-y; */
+    width: 1400;
+    height: 1000;
+}

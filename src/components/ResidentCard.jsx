@@ -19,7 +19,7 @@ const ResidentCard = ({ residentUrl }) => {
 
   return (
     <>
-      <article className=" border-2  border-[#8EFF8B] max-w-[27.3125rem] max-h-[40rem] ">
+      <article className="relative border-2  border-[#8EFF8B] max-w-[27.3125rem] max-h-[40rem] ">
         <section>
           {/* image container */}
           <div className="max-h-[25.125rem] max-w-auto border-b-[2px]  border-[#8EFF8B] overflow-hidden">

@@ -5,6 +5,7 @@ import { getRandomDimension } from "./utils/random";
 import LocationForm from "./components/LocationForm";
 import LocationInfo from "./components/LocationInfo";
 import ResidentList from "./components/ResidentList";
+import Backgrounds from "./components/Backgrounds";
 
 function App() {
   const [dimensionData, setDimensionData] = useState(null);
@@ -35,9 +36,11 @@ const handleSubmit = (e) => {
   }, []);
 
   return (
-    <>
+<>
+    <div className="bg-custom bg-center min-w-max">
+       <Backgrounds></Backgrounds>
       <main
-        className=" font-fira-code bg-center bg-cover bg-black text-white min-h-screen  min-w-max flex justify-center items-center"
+        className=" font-fira-code bg-center bg-cover text-white min-h-screen  min-w-max flex justify-center items-center"
         // style={{
         //   backgroundImage: "url(rick40x705.jpg)",
         //   display: "flex",
@@ -45,16 +48,17 @@ const handleSubmit = (e) => {
         // }}
       >
         {/* rick and morty logo */}
-        <div className="bg-center bg-cover absolute top-0 min-w-max">
-          <img src="images/header.png" alt="" />
-        </div>
+
+       
         <div>
+              
           <LocationForm handleSubmit={handleSubmit} />
           <LocationInfo dimensionData={dimensionData} />
           <ResidentList currentLocation={dimensionData} residents={dimensionData?.residents ?? []} />
         </div>
       </main>
-    </>
+    </div>
+</>
   );
 }
 

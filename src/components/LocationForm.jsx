@@ -1,19 +1,19 @@
 const LocationForm = ({ handleSubmit }) => {
   return (
-    <div className="pt-[16.9rem] bg-transparent">
+    <div className="relative flex justify-center  bg-transparent">
       <form
-        className="grid grid-cols-4 border-2 max-w-sm border-[#8EFF8B]"
+        className="grid grid-cols-4 border-2 border-[#8EFF8B]"
         onSubmit={handleSubmit}
       >
         <input
-          className="py-4 bg-[#00000035] z-10 text-white  col-span-3"
+          className=" py-4 px-5 bg-[#00000035] z-10 text-white text-xl placeholder-[#938686] col-span-3"
           min={1}
           id="newLocation"
           max={126}
-          placeholder="Type a location id..."
+          placeholder="Type a location ID..."
           type="number"
         />
-        <button className="border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green">Search</button>
+        <button className=" px-4 border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green">Search</button>
       </form>
       </div>
   );
