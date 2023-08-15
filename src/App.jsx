@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-custom bg-center min-w-max">
+      <div className=" bg-center min-w-max h-screen">
         <Suspense fallback={<Loading />}>
           {dimensionData ? (
             <>
@@ -62,9 +62,6 @@ function App() {
           )}
         </Suspense>
       </div>
-
-
-
     </>
   );
 }

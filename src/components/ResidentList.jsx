@@ -23,6 +23,8 @@ useEffect(()=>{
 setCurrentPage(INITIAL_PAGE)
 },[currentLocation])
 
+
+
 return (
     <>
       <section className="relative pb-3 pt-3 z-10">

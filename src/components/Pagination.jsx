@@ -2,7 +2,7 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
   const itemsPerRow = 8;
 
   return (
-    <ul className="flex justify-center items-center flex-wrap px-6">
+    <ul className="flex justify-center items-center flex-wrap">
       {pages.map((page) => (
         <li
           className={`rounded-full  m-1 bg-[#07272a] my-1 ${

@@ -6,14 +6,14 @@ const LocationForm = ({ handleSubmit }) => {
         onSubmit={handleSubmit}
       >
         <input
-          className=" py-4 px-5 bg-[#00000035] z-10 text-white text-xl placeholder-[#938686] col-span-3"
+          className=" py-4 px-5 sm:px-20 bg-[#00000035] z-10 text-white text-xl placeholder-[#938686] col-span-3"
           min={1}
           id="newLocation"
           max={126}
           placeholder="Type a location ID..."
           type="number"
         />
-        <button className=" px-4 border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green">
+        <button className=" px-4 sm:px-12 border-l-2 border-l-[#8EFF8B] bg-[#8EFF8B80] l z-10 bg-green hover:bg-[#8EFF8B] hover:text-black sm:text-lg">
           Search
         </button>
       </form>
