@@ -7,7 +7,7 @@ const LocationInfo = ({ dimensionData }) => {
             ¡Welcome to the location {dimensionData?.id}!
           </span>
         </div>
-        <div className="   border-y-[#00800062]  p-3  bg-gradient-to-r from-[#00000000] via-[#93868649] to-[#00000000]">
+        <div className="   border-y-[#00800062]  p-3  bg-gradient-to-r from-[#00000000] via-[#93868635] to-[#00000000]">
           <div className="flex justify-center">
             <h2 className=" px-10 border-b p-1 border-b-[#92929262] text-xl">
               {dimensionData?.name}

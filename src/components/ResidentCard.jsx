@@ -19,7 +19,7 @@ const ResidentCard = ({ residentUrl }) => {
 
   return (
     <>
-      <article className="relative border-2  border-[#8EFF8B] max-w-[27.3125rem] max-h-[40rem] ">
+      <article className="relative border-2 my-10 sm:my-8 border-[#8EFF8B] max-w-[27.3125rem] max-h-[40rem] ">
         <section>
           {/* image container */}
           <div className="max-h-[25.125rem] max-w-auto border-b-[2px]  border-[#8EFF8B] overflow-hidden">
@@ -61,18 +61,18 @@ const ResidentCard = ({ residentUrl }) => {
           <ul className="flex flex-col mx-5 gap-4 pb-5 text-[#938686] m-3">
             <li>
               Species
-              <span className=" ml-[4.5rem] text-white text-xl">
+              <span className="ml-[4.5rem] text-white text-xl">
                 {residentInfo?.species}
               </span>
             </li>
-            <li>
-              Origin
-              <span className="ml-[5.1rem] text-white text-xl">
-                {residentInfo?.origin.name.replace(/\b\w/g, (c) =>
-                  c.toUpperCase()
-                )}
-              </span>
-            </li>
+<li className="flex items-center">
+  Origin:{" "}
+  <span className="flex-shrink truncate ml-[4.3rem] text-white text-xl">
+    {residentInfo?.origin.name.replace(/\b\w/g, (c) =>
+      c.toUpperCase()
+    )}
+  </span>
+</li>
             <li>
               Times Apear
               <span className="ml-[2.1rem] text-white text-xl">

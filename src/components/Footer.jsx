@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="flex justify-center">
-        <div className="absolute repeat-x flex transform -translate-y-[16rem] justify-center w-screen  overflow-hidden">
+        <div className="absolute flex transform pb-9 -translate-y-[14.5rem] justify-center w-screen  overflow-hidden">
           <img
             src="images/footer.png"
             alt="rick & morty logo"
@@ -9,7 +9,7 @@ const Footer = () => {
           />
         </div>
       </div>
-    // </div>
+    
   );
 };
 export default Footer;

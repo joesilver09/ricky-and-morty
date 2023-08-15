@@ -1,12 +1,14 @@
 import axios from "axios";
 import "./App.css";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { getRandomDimension } from "./utils/random";
-import LocationForm from "./components/LocationForm";
-import LocationInfo from "./components/LocationInfo";
-import ResidentList from "./components/ResidentList";
-import Backgrounds from "./components/Backgrounds";
-import Footer from "./components/Footer";
+import Loading from "./components/Loading";
+
+const Backgrounds = lazy(() => import("./components/Backgrounds"));
+const LocationForm = lazy(() => import("./components/LocationForm"));
+const LocationInfo = lazy(() => import("./components/LocationInfo"));
+const ResidentList = lazy(() => import("./components/ResidentList"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   const [dimensionData, setDimensionData] = useState(null);
@@ -19,17 +21,17 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  const newLocation = e.target.newLocation.value;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newLocation = e.target.newLocation.value;
 
-  if (!newLocation || isNaN(newLocation) || +newLocation === 0) {
-    alert("Valor inválido. Por favor, ingresa un número válido.");
-    return; // Sale de la función si el valor es inválido
-  }
+    if (!newLocation || isNaN(newLocation) || +newLocation === 0) {
+      alert("Valor inválido. Por favor, ingresa un número válido.");
+      return; // Sale de la función si el valor es inválido
+    }
 
-  fetchDimension(newLocation);
-};
+    fetchDimension(newLocation);
+  };
 
   useEffect(() => {
     const randomDimension = getRandomDimension(126);
@@ -37,30 +39,33 @@ const handleSubmit = (e) => {
   }, []);
 
   return (
-<>
-    <div className="bg-custom bg-center min-w-max">
-       <Backgrounds/>
-      <main
-        className=" font-fira-code bg-center bg-cover text-white min-h-[70vh]  min-w-max flex justify-center items-center overflow-hidden"
-        // style={{
-        //   backgroundImage: "url(rick40x705.jpg)",
-        //   display: "flex",
-        //   position: "fixed"
-        // }}
-      >
-        {/* rick and morty logo */}
+    <>
+      <div className="bg-custom bg-center min-w-max">
+        <Suspense fallback={<Loading />}>
+          {dimensionData ? (
+            <>
+              <Backgrounds />
+              <main className=" font-fira-code bg-center bg-cover text-white min-h-[70vh]  min-w-max flex justify-center items-center overflow-hidden">
+                <div>
+                  <LocationForm handleSubmit={handleSubmit} />
+                  <LocationInfo dimensionData={dimensionData} />
+                  <ResidentList
+                    currentLocation={dimensionData}
+                    residents={dimensionData?.residents ?? []}
+                  />
+                  <Footer />
+                </div>
+              </main>
+            </>
+          ) : (
+            <Loading />
+          )}
+        </Suspense>
+      </div>
 
-       
-        <div>
-              
-          <LocationForm handleSubmit={handleSubmit} />
-          <LocationInfo dimensionData={dimensionData} />
-          <ResidentList currentLocation={dimensionData} residents={dimensionData?.residents ?? []} />
-          <Footer/>
-        </div>
-      </main>
-    </div>
-</>
+
+
+    </>
   );
 }
 

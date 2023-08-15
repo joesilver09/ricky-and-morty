@@ -25,9 +25,9 @@ setCurrentPage(INITIAL_PAGE)
 
 return (
     <>
-      <section className="relative">
+      <section className="relative pb-3 pt-3 z-10">
       <Pagination pages={pages} setCurrentPage={setCurrentPage}  currentPage={currentPage}/>
-        <section>
+        <section className="sm:grid sm:grid-cols-2 sm:gap-x-16">
           {residentsInPage.map((resident) => (
             <ResidentCard key={resident} residentUrl={resident} />
           ))}
